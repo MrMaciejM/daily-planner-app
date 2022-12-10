@@ -4,13 +4,48 @@ body {
   line-height: 1;
 }
 
+.container {
+  display: block;
+  align-content: center;
+  justify-content: center;
+}
+/* pHour, textarea, saveBtn // this is what each hour contains*/
+/* timeslot-div wraps the 3 elements above */
+.timeslot-div {
+  text-align: left;
+  border: solid 1px black;
+  margin: 0;
+}
+.pHour {
+  display: inline-block;
+  position: relative;
+  left: 1rem;
+  bottom: 1rem;
+  border: solid 1px green;
+  margin-right: 2rem;
+}
+.textarea0 {
+  margin-left: 0.55rem;
+}
+
 textarea {
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 1rem;
+  width: 80%;
   background: transparent;
   border: none;
   resize: none;
   color: #000000;
   border-left: 1px solid black;
+  border: solid 2px green;
   padding: 10px;
+}
+.saveBtnItem {
+  display: inline-block;
+  float: right;
+  margin-top: 2.2rem;
+  margin-right: 1rem;
 }
 
 .jumbotron {
