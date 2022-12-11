@@ -53,19 +53,37 @@ $(`textarea`).each(function (getIndex) {
 // var saveItem = localStorage.setItem("items", JSON.stringify(testArr));
 //localStorage.setItem("items", JSON.stringify(testArr));
 //console.log(testArr);
+console.log(testGet);
 // prettier-ignore
 $(".saveBtnItem").on("click", function(event) {
-    
+    //testGet[0][0] = storeInput;
+    console.log(testGet[0][0]);
+    // get entire array, then update the value, then push to save
+    $(`textarea`).each(function (getIndex) {
+        var storeInput = $(`textarea.textarea${getIndex}`).val();
+        // gets current string/task
+        testGet[getIndex][getIndex] = storeInput;
+        localStorage.setItem("items", JSON.stringify(testGet)); 
+    })
+    console.log(testArr); 
+    //console.log(storeInput); 
+    //localStorage.setItem(`items`[0][1], JSON.stringify(storeInput))
+    //$(`textarea.textarea0`)
+    /* 
     $(`textarea`).each(function (getIndex) {
         // get values from all textareas 
         var getValues = $(`textarea.textarea${getIndex}`).val();
-        //console.log(JSON.stringify(getValues))
+
+        console.log(localStorage.setItem(`items`,JSON.stringify(getValues)));
+
+        console.log(testGet[getIndex][getIndex]);
         //localStorage.setItem(`items`,JSON.stringify(getValues));
         //console.log(getValues); 
       });
     //$("textarea").val("")
+    */ 
 });
-
+//fixDummyData();
 //$(".textarea0").get(testArr.keys("9am")).append();
 // .css("background-color", "aqua")
 
