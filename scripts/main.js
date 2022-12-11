@@ -32,26 +32,38 @@ var testArr = [
     {7: "string task 8"},
     {8: "string task 9"},
 ];
-localStorage.setItem("test", JSON.stringify(testArr));
-var testGet = JSON.parse(localStorage.getItem("test"));
+//localStorage.setItem("items", JSON.stringify(testArr));
+
+/*
+localStorage.setItem("items", JSON.stringify(testArr));
+var testGet = JSON.parse(localStorage.getItem("items"));
 console.log(testGet);
+*/
 
 // retrieve data from the array and display on textarea
 var getIndex = 0;
-console.log(testArr);
+var testGet = JSON.parse(localStorage.getItem("items"));
+//console.log(testArr);
 $(`textarea`).each(function (getIndex) {
   $(`textarea.textarea${getIndex}`).val(testGet[getIndex][getIndex]);
 });
 
-// add event listeners to save buttons
+// add event listeners to save buttons and
+// save items to localStorage
+// var saveItem = localStorage.setItem("items", JSON.stringify(testArr));
+//localStorage.setItem("items", JSON.stringify(testArr));
+//console.log(testArr);
 // prettier-ignore
 $(".saveBtnItem").on("click", function(event) {
-    //console.log("btn clicked")
-    var textareaValue = $("textarea").val();
-    console.log(textareaValue); 
-
-    // resets textarea 
-    $("textarea").val("")
+    
+    $(`textarea`).each(function (getIndex) {
+        // get values from all textareas 
+        var getValues = $(`textarea.textarea${getIndex}`).val();
+        //console.log(JSON.stringify(getValues))
+        //localStorage.setItem(`items`,JSON.stringify(getValues));
+        //console.log(getValues); 
+      });
+    //$("textarea").val("")
 });
 
 //$(".textarea0").get(testArr.keys("9am")).append();
