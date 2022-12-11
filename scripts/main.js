@@ -1,13 +1,12 @@
 //<p id="currentDay" class="lead"></p>
-var currentTime = moment().format("dddd DD MMM YYYY");
+var currentDay = moment().format("dddd DD MMM YYYY");
 
 // prettier-ignore
 var workHours = ["9am", "10am", "11am", "12pm", "1pm", "2pm","3pm", "4pm", "5pm"];
 var timeSlots = document.querySelectorAll(".timeslot-div");
 
 // display current day on the app
-$("#currentDay").text(currentTime);
-
+$("#currentDay").text(currentDay);
 //<div class="container">
 //var container = document.getElementsByClassName("container");
 // calendar timeslots 9am-5pm
@@ -53,11 +52,11 @@ $(`textarea`).each(function (getIndex) {
 // var saveItem = localStorage.setItem("items", JSON.stringify(testArr));
 //localStorage.setItem("items", JSON.stringify(testArr));
 //console.log(testArr);
-console.log(testGet);
+//console.log(testGet);
 // prettier-ignore
 $(".saveBtnItem").on("click", function(event) {
     //testGet[0][0] = storeInput;
-    console.log(testGet[0][0]);
+    //console.log(testGet[0][0]);
     // get entire array, then update the value, then push to save
     $(`textarea`).each(function (getIndex) {
         var storeInput = $(`textarea.textarea${getIndex}`).val();
@@ -65,24 +64,53 @@ $(".saveBtnItem").on("click", function(event) {
         testGet[getIndex][getIndex] = storeInput;
         localStorage.setItem("items", JSON.stringify(testGet)); 
     })
-    console.log(testArr); 
-    //console.log(storeInput); 
-    //localStorage.setItem(`items`[0][1], JSON.stringify(storeInput))
-    //$(`textarea.textarea0`)
-    /* 
-    $(`textarea`).each(function (getIndex) {
-        // get values from all textareas 
-        var getValues = $(`textarea.textarea${getIndex}`).val();
-
-        console.log(localStorage.setItem(`items`,JSON.stringify(getValues)));
-
-        console.log(testGet[getIndex][getIndex]);
-        //localStorage.setItem(`items`,JSON.stringify(getValues));
-        //console.log(getValues); 
-      });
-    //$("textarea").val("")
-    */ 
+    //console.log(testArr); 
+ 
 });
+
+// create logic past, present and future items, then apply correct color to the textarea
+// past = grey, present = red, future = green;
+//console.log(workHours);
+// retrieve the time from <p> time tags - try string format first
+$(".pHour").each(function (getIndex) {
+  //var currentTime = moment().format("ha");
+  var currentTime = moment().format("ha");
+  var slotTime = $(`.p${getIndex}`).text();
+  //console.log(currentTime);
+  //var startOfTime = moment().hours(9).add(getIndex, "hour").format("ha");
+  var startOfTime = moment().hours(9).add(getIndex, "hour");
+  var before = moment().isBefore(startOfTime);
+  var same = moment().isSame(startOfTime);
+  var after = moment().isAfter(startOfTime);
+  if (before == true) {
+    $(`.textarea${getIndex}`).css("background-color", "lime");
+  }
+  if (same == true) {
+    $(`.textarea${getIndex}`).css("background-color", "red");
+  }
+  if (after == true) {
+    $(`.textarea${getIndex}`).css("background-color", "gray");
+  }
+
+  //console.log(moment().isBefore(startOfTime));
+
+  //$("textarea").css("background-color", "grey");
+  //console.log(moment().isBefore("5pm", "ha"));
+  //console.log(startOfTime);
+  //console.log(startOfTime);
+  //console.log(moment().format("ha"));
+  //console.log(moment("ha").isBefore("4pm"));
+  // $(".pHour").css("background-color", "red");
+});
+//   console.log(currentTime);
+//   console.log($(".pHour").text());
+//   if (currentTime === $(".pHour").text()) {
+//     $(".pHour").css("background-color", "blue");
+//   }
+//   //console.log(currentTime);
+//   console.log(pHourVal);
+// });
+
 //fixDummyData();
 //$(".textarea0").get(testArr.keys("9am")).append();
 // .css("background-color", "aqua")
