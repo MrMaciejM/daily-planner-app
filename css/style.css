@@ -40,12 +40,14 @@ textarea {
   border-left: 1px solid black;
   border: solid 2px green;
   padding: 10px;
+  word-wrap: break-word;
 }
 .saveBtnItem {
   display: inline-block;
   float: right;
-  margin-top: 2.2rem;
+  margin-top: 1.4rem;
   margin-right: 1rem;
+  padding: 0.8rem;
 }
 
 .jumbotron {
