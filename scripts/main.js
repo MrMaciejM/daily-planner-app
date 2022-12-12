@@ -83,13 +83,13 @@ $(".pHour").each(function (getIndex) {
   var same = moment().isSame(startOfTime);
   var after = moment().isAfter(startOfTime);
   if (before == true) {
-    $(`.textarea${getIndex}`).css("background-color", "lime");
+    $(`.textarea${getIndex}`).css("background-color", "#77dd77");
   }
   if (same == true) {
-    $(`.textarea${getIndex}`).css("background-color", "red");
+    $(`.textarea${getIndex}`).css("background-color", "#ff6961");
   }
   if (after == true) {
-    $(`.textarea${getIndex}`).css("background-color", "gray");
+    $(`.textarea${getIndex}`).css("background-color", "#d3d3d3");
   }
 
   //console.log(moment().isBefore(startOfTime));
