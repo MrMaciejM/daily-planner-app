@@ -24,7 +24,12 @@ body {
   border: solid 1px green;
   margin-right: 2rem;
 }
-.textarea0 {
+.textarea0,
+.textarea4,
+.textarea5,
+.textarea6,
+.textarea7,
+.textarea8 {
   margin-left: 0.55rem;
 }
 
@@ -37,18 +42,27 @@ textarea {
   border: none;
   resize: none;
   color: #000000;
-  border-left: 1px solid black;
-  border: solid 2px green;
-  background-color: limegreen;
+  /* border-left: 1px solid black; */
+  border-bottom: solid 1px black;
   padding: 0.8rem 0.5rem;
   word-wrap: break-word;
+  /* border-radius: 1px; */
 }
 .saveBtnItem {
   display: inline-block;
   float: right;
-  margin-top: 1.4rem;
+  /* move all buttons up by decreasing margin-top */
+  margin-top: 1.1rem;
   margin-right: 1rem;
   padding: 0.8rem;
+  background-color: #00f2ff;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+  border: none;
+}
+.saveBtnItem:active {
+  background-color: #008a91;
 }
 
 .timeslot-div {
@@ -100,14 +114,14 @@ textarea {
 }
 
 .saveBtn {
-  border-left: 1px solid black;
+  /* border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
-  color: white;
+  color: white; */
 }
 
 .saveBtn i:hover {
-  font-size: 20px;
+  /* font-size: 20px;
   transition: all 0.3s ease-in-out;
-}
+} */

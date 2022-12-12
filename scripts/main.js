@@ -21,18 +21,21 @@ $(workHours).each(function (hour) {
 // localStorage DUMMY DATA
 // prettier-ignore
 var testArr = [
-    {0: "string task 1"},
-    {1: "string task 2"},
-    {2: "string task 3"},
-    {3: "string task 4"},
-    {4: "string task 5"},
-    {5: "string task 6"},
-    {6: "string task 7"},
-    {7: "string task 8"},
-    {8: "string task 9"},
+    {0: ""},
+    {1: ""},
+    {2: ""},
+    {3: ""},
+    {4: ""},
+    {5: ""},
+    {6: ""},
+    {7: ""},
+    {8: ""},
 ];
-//localStorage.setItem("items", JSON.stringify(testArr));
 
+// fixes issues if array does not exist / was deleted
+if (localStorage.getItem("items") === null) {
+  localStorage.setItem("items", JSON.stringify(testArr));
+}
 /*
 localStorage.setItem("items", JSON.stringify(testArr));
 var testGet = JSON.parse(localStorage.getItem("items"));
