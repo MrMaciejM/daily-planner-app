@@ -50,25 +50,18 @@ $(`textarea`).each(function (getIndex) {
   $(`textarea.textarea${getIndex}`).val(testGet[getIndex][getIndex]);
 });
 
-// add event listeners to save buttons and
-// save items to localStorage
-// var saveItem = localStorage.setItem("items", JSON.stringify(testArr));
-//localStorage.setItem("items", JSON.stringify(testArr));
-//console.log(testArr);
-//console.log(testGet);
+// save buttons
 // prettier-ignore
 $(".saveBtnItem").on("click", function(event) {
     //testGet[0][0] = storeInput;
-    //console.log(testGet[0][0]);
-    // get entire array, then update the value, then push to save
     $(`textarea`).each(function (getIndex) {
         var storeInput = $(`textarea.textarea${getIndex}`).val();
         // gets current string/task
         testGet[getIndex][getIndex] = storeInput;
         localStorage.setItem("items", JSON.stringify(testGet)); 
     })
-    //console.log(testArr); 
- 
+    
+    $(".alert").text("Saved to localStorage!").delay(2000).fadeOut("slow"); 
 });
 
 // create logic past, present and future items, then apply correct color to the textarea

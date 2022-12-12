@@ -4,6 +4,12 @@ body {
   line-height: 1;
 }
 
+
+.alert{
+  text-align: center;
+  font-size: 22px;
+}
+
 .container {
   display: block;
   align-content: center;
