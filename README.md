@@ -8,4 +8,14 @@ I was tasked to use jQuery tool along with moment.js to build dynamic planner by
 
 You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
 
+## Example screenshot
+
+![](/images/daily-planner.png)
+
 ## Links
+
+Repository:
+https://github.com/MrMaciejM/daily-planner-app
+
+Deployed app:
+https://mrmaciejm.github.io/daily-planner-app/
